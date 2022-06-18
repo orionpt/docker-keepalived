@@ -1,9 +1,9 @@
 # Use osixia/light-baseimage
 # sources: https://github.com/osixia/docker-light-baseimage
-FROM linkvt/osixia_light-baseimage:fix-alpine-arm-builds-dev
+FROM osixia/osixia_light-baseimage
 
 # Keepalived version
-ARG KEEPALIVED_VERSION=2.0.20
+ARG KEEPALIVED_VERSION=2.2.7
 
 # Download, build and install Keepalived
 RUN apk --no-cache add \
