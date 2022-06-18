@@ -24,7 +24,7 @@ jobs:
           platforms: ${{ env.PLATFORMS }}
       - name: Set up Docker Buildx
         id: buildx
-        uses: docker/setup-buildx-action@v1
+        uses: docker/setup-buildx-action@v2
         with:
           install: true # use buildx on normal `docker build` calls
 
