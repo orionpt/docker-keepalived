@@ -33,8 +33,8 @@ jobs:
       - run: bats -v
 
       - uses: actions/checkout@v2
-      - run: make build-nocache NAME=${{ secrets.CONTAINER_REPOSITORY }} VERSION=${{ env.VERSION }}
-      - run: make test NAME=${{ secrets.CONTAINER_REPOSITORY }} VERSION=${{ env.VERSION }}
+      - run: make build-nocache NAME=keepalived VERSION=${{ env.VERSION }}
+      - run: make test NAME=keepalived VERSION=${{ env.VERSION }}
 
       - name: Login to DockerHub
         uses: docker/login-action@v1
@@ -48,4 +48,4 @@ jobs:
           file: image/Dockerfile
           platforms: ${{ env.PLATFORMS }}
           push: ${{ env.VERSION == 'stable' || env.VERSION == 'develop' }} # only push stable and develop versions, no feature/... branches
-          tags: ${{ secrets.CONTAINER_REPOSITORY }}:${{ env.VERSION }}
+          tags: keepalived:${{ env.VERSION }}
