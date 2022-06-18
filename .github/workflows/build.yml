@@ -20,7 +20,7 @@ jobs:
         if: env.GITHUB_REF_SLUG == 'master'
 
       - name: Set up QEMU
-        uses: docker/setup-qemu-action@v1
+        uses: docker/setup-qemu-action@v2
         with:
           platforms: ${{ env.PLATFORMS }}
       - name: Set up Docker Buildx
